@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Juegos Mecánicos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <!-- Barra superior con el logo y el icono de bocina -->
+        <div class="logo">Logo</div>
+
+        <!-- Menú normal -->
+        <div class="menu-bar">
+            <a href="#home">Home</a>
+            <a href="#cuenta">Cuenta</a>
+            <a href="#sobre-nosotros">Sobre Nosotros</a>
+            <a href="#juegos">Juegos</a>
+        </div>
+
+        <!-- Icono de bocina para activar el dictado -->
+        <div class="icono-bocina" onclick="activarDictado()" title="Escuchar Contenido">
+            🔊
+        </div>
+    </div>
+
+    <main id="home">
+        <h1>Reserva tu Juego Mecánico</h1>
+        <p>Selecciona una fecha para reservar el juego de tu preferencia:</p>
+
+        <section id="juegos" class="juego-container">
+            <!-- Juego 1 -->
+            <div class="juego" onclick="infoJuego(this)" data-nombre="Montaña Rusa"
+                data-descripcion="Emoción pura en cada curva y caída. ¡Siente la adrenalina!"
+                data-precio="$500 por hora" data-altura="40m" data-area="50x30m" data-potencia="200 kW"
+                data-voltaje="380V 50Hz" data-capacidad="20 personas">
+                <img src="images/MONTAÑARUSA.png" alt="Juego 1" width="150" height="150">
+                <h3>Montaña Rusa</h3>
+                <p>Emoción pura en cada curva y caída. ¡Siente la adrenalina!</p>
+                <p class="precio">$500 por hora</p>
+                <input type="date" class="fecha-apartado">
+                <button onclick="apartarJuego(this)">Apartar</button>
+            </div>
+
+            <!-- Juego 2 -->
+            <div class="juego" onclick="infoJuego(this)" data-nombre="Rueda de la Fortuna"
+                data-descripcion="Disfruta de las vistas más altas de la feria." data-precio="$399 por hora"
+                data-altura="65m" data-area="38x32m" data-potencia="100 kW" data-voltaje="380V 50Hz"
+                data-capacidad="216 personas">
+                <img src="images/RUEDA DE LA FORTUNA.png" alt="Juego 2" width="150" height="150">
+                <h3>Rueda de la Fortuna</h3>
+                <p>Disfruta de las vistas más altas de la feria.</p>
+                <p class="precio">$399 por hora</p>
+                <input type="date" class="fecha-apartado">
+                <button onclick="apartarJuego(this)">Apartar</button>
+            </div>
+
+            <!-- Juego 3 -->
+            <div class="juego" onclick="infoJuego(this)" data-nombre="Gusanito"
+                data-descripcion="Que los peques disfruten dar vueltas sin miedo a las alturas."
+                data-precio="$270 por hora" data-altura="5m" data-area="10x8m" data-potencia="20 kW"
+                data-voltaje="220V 50Hz" data-capacidad="15 personas">
+                <img src="images/GUSANITO.png" alt="Juego 3" width="150" height="150">
+                <h3>Gusanito</h3>
+                <p>Que los peques disfruten dar vueltas sin miedo a las aturas.</p>
+                <p class="precio">$270 por hora</p>
+                <input type="date" class="fecha-apartado">
+                <button onclick="apartarJuego(this)">Apartar</button>
+            </div>
+
+            <!-- Juego 4 -->
+            <div class="juego" onclick="infoJuego(this)" data-nombre="Dragoncito Mini"
+                data-descripcion="Que los niños disfruten al estar más alto de su estatura." data-precio="$325 por hora"
+                data-altura="8m" data-area="12x10m" data-potencia="30 kW" data-voltaje="220V 50Hz"
+                data-capacidad="12 personas">
+                <img src="images/Dragoncito mini.png" alt="Juego 4" width="150" height="150">
+                <h3>Dragoncito Mini</h3>
+                <p>Que los niños disfruten al estar mas alto de su estatura.</p>
+                <p class="precio">$325 por hora</p>
+                <input type="date" class="fecha-apartado">
+                <button onclick="apartarJuego(this)">Apartar</button>
+            </div>
+
+            <!-- Juego 5 -->
+            <div class="juego" onclick="infoJuego(this)" data-nombre="Dragoncito"
+                data-descripcion="Igual que el mini pero con más altura y capacidad." data-precio="$499 por hora"
+                data-altura="12m" data-area="15x12m" data-potencia="50 kW" data-voltaje="380V 50Hz"
+                data-capacidad="20 personas">
+                <img src="images/DRAGONCITO.png" alt="Juego 5" width="150" height="150">
+                <h3>Dragoncito</h3>
+                <p>Igual que el mini pero mas altura y mas cantidad!!.</p>
+                <p class="precio">$499 por hora</p>
+                <input type="date" class="fecha-apartado">
+                <button onclick="apartarJuego(this)">Apartar</button>
+            </div>
+
+            <!-- Juego 6 -->
+            <div class="juego" onclick="infoJuego(this)" data-nombre="Carrusel"
+                data-descripcion="Para que las parejas disfruten dar vueltas juntos." data-precio="$460 por hora"
+                data-altura="6m" data-area="14x14m" data-potencia="25 kW" data-voltaje="220V 50Hz"
+                data-capacidad="30 personas">
+                <img src="images/CARRUSEL.png" alt="Juego 6" width="150" height="150">
+                <h3>Carrusel</h3>
+                <p>Para que las parejas disfruten dar vueltas juntos.</p>
+                <p class="precio">$460 por hora</p>
+                <input type="date" class="fecha-apartado">
+                <button onclick="apartarJuego(this)">Apartar</button>
+            </div>
+        </section>
+
+        <!-- Modal para detalles del juego -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <div class="juego-img">
+                    <h2 id="juego-seleccionado">Detalles de Juego</h2>
+                    <img id="juego-imagen" src="" alt="Imagen del juego">
+                    <input type="date" class="fecha-apartado-detalles">
+                    <button onclick="apartarJuego(this)">Confirmar Apartado</button>
+                </div>
+                <div class="detalles-juego" id="juego-detalles"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <section id="cuenta">
+        <h2>Tu Cuenta</h2>
+        <p>Aquí podrás administrar tus reservas y datos personales.</p>
+    </section>
+
+    <section id="sobre-nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una empresa dedicada a ofrecer experiencias inolvidables en juegos mecánicos.</p>
+    </section>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

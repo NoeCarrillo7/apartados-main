@@ -1,0 +1,241 @@
+/* Barra superior con fondo degradado */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #4e79a7, #9b59b6); /* Degradado de azul a morado */
+    color: white;
+    padding: 10px;
+}
+
+/* Estilos del logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menú en barra superior */
+.menu-bar {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu-bar a:hover {
+    color: #f1c40f; /* Color dorado al pasar el mouse */
+}
+
+/* Icono de bocina */
+.icono-bocina {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* Fondo de la página */
+body {
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* Degradado de verde a azul claro */
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor de juegos */
+.juego-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.juego {
+    background-color: white; /* Fondo blanco para cada juego */
+    border: 2px solid #ddd; /* Borde suave gris */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.juego:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+}
+
+/* Estilo de la imagen de los juegos */
+.juego img {
+    max-width: 100%;
+    height: 150px; /* Establecer altura fija para la imagen */
+    object-fit: cover; /* Asegura que la imagen se recorte bien */
+    border-radius: 5px; /* Bordes redondeados a la imagen */
+}
+
+/* Estilos del título y el precio */
+.juego h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.juego p {
+    font-size: 16px;
+    color: #555;
+}
+
+.juego .precio {
+    font-size: 18px;
+    color: #27ae60; /* Verde para el precio */
+    font-weight: bold;
+}
+
+/* Estilo de los botones */
+.juego button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s;
+}
+
+.juego button:hover {
+    background-color: #f1c40f;
+}
+
+/* Ajustes de título y párrafos generales */
+h1, h2, p {
+    font-family: Arial, sans-serif;
+    color: #333; /* Color de texto gris oscuro */
+}
+
+/* Secciones generales */
+#cuenta, #sobre-nosotros {
+    padding: 20px;
+}
+
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 8% 25%;
+    width: 60%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Cerrar botón */
+.close {
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Contenedor de imagen y título */
+.juego-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.juego-img img {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.juego-img h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.fecha-apartado-detalles{
+    margin-top: 30px;
+}
+
+/* Estilos para los detalles del juego */
+#juego-detalles {
+    text-align: left;
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    padding: 3%;
+}
+
+#juego-detalles p {
+    margin: 8px 0;
+}
+
+#juego-detalles strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Botón de confirmación */
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #f1c40f;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    .juego-img h2 {
+        font-size: 1.6em;
+    }
+
+    #juego-detalles {
+        font-size: 0.9em;
+    }
+}
